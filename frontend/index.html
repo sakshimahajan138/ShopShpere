@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopSphere | Online Shopping</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">🛍️ Shop<span>Sphere</span></div>
+    <input type="text" id="searchInput" placeholder="Search products..." class="search-bar" />
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 Cart <span id="cartCount" class="cart-badge">0</span>
+    </button>
+  </nav>
+
+  <!-- CATEGORY FILTERS -->
+  <div class="category-filters">
+    <button class="filter-btn active" onclick="filterCategory('All', this)">All</button>
+    <button class="filter-btn" onclick="filterCategory('Electronics', this)">Electronics</button>
+    <button class="filter-btn" onclick="filterCategory('Fashion', this)">Fashion</button>
+    <button class="filter-btn" onclick="filterCategory('Beauty', this)">Beauty</button>
+    <button class="filter-btn" onclick="filterCategory('Home Decor', this)">Home Decor</button>
+    <button class="filter-btn" onclick="filterCategory('Accessories', this)">Accessories</button>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <main>
+    <h2 class="section-title">Trending Products ✨</h2>
+    <div id="products" class="products-grid"></div>
+  </main>
+
+  <!-- CART SIDEBAR (Same as before) -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <span class="close-btn" onclick="toggleCart()">✖</span>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <p>Total: ₹<span id="cartTotal">0</span></p>
+      <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+  </div>
+
+  <!-- ORDER POPUP (Same as before) -->
+  <div id="orderPopup" class="popup-overlay hidden">
+    <div class="popup-box">
+      <div class="popup-icon">✅</div>
+      <h2>Order Placed Successfully!</h2>
+      <p id="popupMsg">Thank you for shopping with ShopSphere 🎉</p>
+      <p class="order-id" id="orderIdText"></p>
+      <button class="close-popup-btn" onclick="closePopup()">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
